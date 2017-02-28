@@ -20,6 +20,7 @@ end.parse!
 i=options.sample
 s=options.show
 if(i)
+	count=0
 	digest = Digest::MD5.base64digest(File.read(i))
 	puts "The file has been hashed is: #{digest}."
 	puts "-------------------"
@@ -37,8 +38,14 @@ if(i)
 		puts "The sample is already existed in database!!!"
 	else
 		client[:backdoor].insert_one sample
-		puts "Sampled added successfully!!!"
+		puts "Samples added successfully!!!"
 	end
+
+	client[:backdoor].find().each do |a|
+		count= count+1
+	end
+
+	puts "There are #{count} sample(s) is(are) available. You can use -s to show the data"
 end
 if(s=="show") 
 
