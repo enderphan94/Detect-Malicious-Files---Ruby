@@ -53,7 +53,7 @@ if(s=="show")
         puts "-----------------------------------------"
 
 	client[:backdoor].find().each do |a|
-		puts "\n"
+		#puts "\n"
 		puts "|\t#{a['hash']}\t|"
 		puts "-----------------------------------------"
 	end
