@@ -88,11 +88,8 @@ if(t)
 	
         	if File.directory?(file)
                 	open_folder(file)
-		
-		#puts "is dir #{file}"
         	end 
 		if File.file?(file)
-		#puts "is file #{file}"
                 	open_file(file)
         	end
 	end
@@ -101,11 +98,8 @@ else
         
         	if File.directory?(file)
                 	open_folder(file)
-                
-                #puts "is dir #{file}"
         	end
         	if File.file?(file)
-                #puts "is file #{file}"
                 	open_file(file)
         	end
 	end
