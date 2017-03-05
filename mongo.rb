@@ -2,7 +2,8 @@ require 'mongo'
 require 'optparse'
 require 'ostruct'
 require 'digest'
-
+require 'etc'
+require 'date'
 options = OpenStruct.new
 OptionParser.new do |opt|
   opt.on('-D', '--Directory Location', 'Location of Directory') {|o| options.dir = o }
@@ -17,25 +18,34 @@ end.parse!
 
 D=options.dir
 t=options.type
-d=options.time
+@d=options.time
 
 Mongo::Logger.logger.level = ::Logger::FATAL
 
 @storage_arr = Array.new
-#files = Dir.glob(D)
-#txt = open(D)
+#files = Dir.glob(D)txt = open(D)
 @hash =Array.new
 
 @i=0
 def open_folder(file)
-	
-	Dir.glob("#{file}/*") do |subfiles|
-		if File.directory?(subfiles)
-			open_folder(subfiles)
+	if(t)
+		Dir.glob("#{file}/*"+t) do |subfiles|
+			if File.directory?(subfiles)
+				open_folder(subfiles)
 				
-		elsif File.file?(subfiles)
-			open_file(subfiles)	
+			elsif File.file?(subfiles)
+				open_file(subfiles)	
+			end
 		end
+	else
+	 	Dir.glob("#{file}/*") do |subfiles|
+                	if File.directory?(subfiles)
+                        	open_folder(subfiles)
+
+                	elsif File.file?(subfiles)
+                        	open_file(subfiles)
+                	end
+        	end
 	end
 end
 
@@ -51,21 +61,52 @@ def open_file(file)
 	end
 
 	if(@storage_arr.include?(digest))
-		puts "Malicious file detected is"+"\t"+"#{file}"
+		uid = File.stat(file).uid
+		perm = File.stat(file)
+		time= File.mtime(file)
+		contime = time.strftime("%m/%d/%y")
+
+		if(@d)
+			today = Date.today
+			file_time = File.mtime(file).to_date
+			condtime = file_time.strftime("%m/%d/%y")
+			sub = (today - file_time).to_i
+			if(sub<@d.to_i)
+				puts "%o"%perm.mode+"\t"+Etc.getpwuid(uid).name+"\t"+"#{file}"+"\t"+"#{condtime}"
+		
+			end
+		else
+			puts "%o"%perm.mode+"\t"+Etc.getpwuid(uid).name+"\t"+"#{file}"+"\t"+"#{contime}"
+		end
 	end
 	
 	client.close
 end
 
-Dir.glob(D+"*") do |file|
+if(t)
+	Dir.glob(D+"*"+t) do |file|
 	
-        if File.directory?(file)
-                open_folder(file)
+        	if File.directory?(file)
+                	open_folder(file)
 		
 		#puts "is dir #{file}"
-        end 
-	if File.file?(file)
+        	end 
+		if File.file?(file)
 		#puts "is file #{file}"
-                open_file(file)
-        end
+                	open_file(file)
+        	end
+	end
+else
+	Dir.glob(D+"*") do |file|
+        
+        	if File.directory?(file)
+                	open_folder(file)
+                
+                #puts "is dir #{file}"
+        	end
+        	if File.file?(file)
+                #puts "is file #{file}"
+                	open_file(file)
+        	end
+	end
 end
