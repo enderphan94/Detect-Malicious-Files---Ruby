@@ -45,32 +45,32 @@ You need to install the needed software to implement the program.
 
 ## Talk with database
 
-+Start Mongod service 
++ Start Mongod service 
 
 $ service mongod start
 
-+Checking for the samples in database are available
++ Checking for the samples in database are available
 
 $ ruby dbin.rb -s show
 
-+Input samples to the database
++ Input samples to the database
 
 $ ruby dbin.rb -i </path/file>
 
 
 ## Execute the scan
 
-+Scan with entire directory
++ Scan with entire directory
 
 $ ruby reiker.rb -D /home/ender/website
 
-+Scan with the specific file types
++ Scan with the specific file types
 
 $ ruby reiker.rb -D /home/edner/website -t php 
 
 *Filetype: py,c,php..*
 
-+Scan with days interval
++ Scan with days interval
 
 $ ruby reiker.rb -D /home/ender/webstie -t php -d 10
 
