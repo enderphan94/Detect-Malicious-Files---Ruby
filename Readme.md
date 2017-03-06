@@ -18,7 +18,8 @@ Ruby newest version
 
 # Usage
 
--Reiker.rb
+##reiker.rb
+
 Usage: reiker [options]
 
     -D, --Directory Location         Location of Directory
@@ -29,7 +30,8 @@ Usage: reiker [options]
 
     -h, --help                       Displays Help
 
-dbin.rb
+##dbin.rb
+
 Usage: dbin [options]
     -i, --sample else                The unhashed sample
 
