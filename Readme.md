@@ -1,4 +1,4 @@
-# Reiker - Scanning Malware/Rootkit/Backdoor files in Linux Environment
+# Reiker - Scanning Malware/Rootkit/Backdoor files in Linux
 
 Coded By Ender Phan
 
@@ -10,11 +10,11 @@ Operating System: Linux (Tested in Ubuntu 16.10)
 
 The Reiker project is created for Ruby course which will illustrate how strong ruby in Security. In this project it is developed to help people can find the malicious files in Linux evironment (Malware, Rootkit, Backdoor..).
 
-# Requrements
+# Requirements
 
-Mongodb newest version
+Mongodb version v.3.4.2
 
-Ruby newest version
+Ruby (latest version recommended)
 
 # Usage
 
@@ -39,4 +39,40 @@ Usage: dbin [options]
 
     -h, --help                       Displays Help
 
-# Example
+# Guide
+
+You need to install the needed software to implement the program. 
+
+## Talk with database
+
+-Start Mongod service 
+
+$ service mongod start
+
+-Checking for the samples in database are available
+
+$ ruby dbin.rb -s show
+
+-Input samples to the database
+
+$ ruby dbin.rb -i </path/file>
+
+
+## Execute the scan
+
+-Scan with entire directory
+
+$ ruby reiker.rb -D /home/ender/website
+
+-Scan with the specific file types
+
+$ ruby reiker.rb -D /home/edner/website -t php 
+
+*Filetype: py,c,php..*
+
+-Scan with days interval
+
+$ ruby reiker.rb -D /home/ender/webstie -t php -d 10
+
+*it means it will scan for the file modified 10 days ago*
+ 
