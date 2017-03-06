@@ -6,6 +6,8 @@ Written by Ruby
 
 Operating System: Linux (Tested in Ubuntu 16.10)
 
+Hash Samples sources: https://virusshare.com/
+
 # Introduction
 
 The Reiker project is created for Ruby course which will illustrate how strong ruby in Security. In this project it is developed to help people can find the malicious files in Linux evironment (Malware, Rootkit, Backdoor..).
