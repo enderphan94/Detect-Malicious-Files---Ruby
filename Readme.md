@@ -18,6 +18,7 @@ Ruby newest version
 
 # Usage
 
+-Reiker.rb
 Usage: reiker [options]
 
     -D, --Directory Location         Location of Directory
@@ -25,6 +26,14 @@ Usage: reiker [options]
     -t, --File_Type FileType         Type of file eg. php,python
 
     -d, --Time_Interval Day          How many days since now
+
+    -h, --help                       Displays Help
+
+dbin.rb
+Usage: dbin [options]
+    -i, --sample else                The unhashed sample
+
+    -s, --show [use "-s show"]       Show the sample in database
 
     -h, --help                       Displays Help
 
