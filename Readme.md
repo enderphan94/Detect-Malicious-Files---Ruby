@@ -53,11 +53,11 @@ You need to install the needed software to implement the program.
 
 + Start Mongod service 
 
-$ service mongod start
+    $ service mongod start
 
 + Checking for the samples in database are available
 
-$ ruby dbin.rb -s show
+    $ ruby dbin.rb -s show
 
 + Import samples to the database
 
