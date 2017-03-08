@@ -61,7 +61,7 @@ You need to install the needed software to implement the program.
 
 + Import samples to the database
 
-$ ruby dbin.rb -i </path/file>
+    $ ruby dbin.rb -i </path/file>
 
 
 ## Execute the scan
