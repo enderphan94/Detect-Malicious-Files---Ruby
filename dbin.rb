@@ -9,7 +9,7 @@ client = Mongo::Client.new(['127.0.0.1:27017'], database: 'hashSample')
 
 options = OpenStruct.new
 OptionParser.new do |opt|
-  opt.on('-i', '--sample else', 'The unhashed sample') { |o| options.sample = o }
+  opt.on('-i', '--sample hash', 'The unhashed sample') { |o| options.sample = o }
   opt.on('-s', '--show [use "-s show"]', 'Show the sample in database') { |o| options.show = o }
   opt.on('-h', '--help', 'Displays Help') do
       puts opt
