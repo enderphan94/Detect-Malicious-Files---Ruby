@@ -57,28 +57,28 @@ You need to install the needed software to implement the program.
 
 + Checking for the samples in database are available
 
-    $ ruby dbin.rb -s show
+    `$ ruby dbin.rb -s show`
 
 + Import samples to the database
 
-    $ ruby dbin.rb -i </path/file>
+    `$ ruby dbin.rb -i </path/file>`
 
 
 ## Execute the scan
 
 + Scan with entire directory
 
-$ ruby reiker.rb -D /home/ender/website
+    `$ ruby reiker.rb -D /home/ender/website`
 
 + Scan with the specific file types
 
-$ ruby reiker.rb -D /home/edner/website -t php 
+    `$ ruby reiker.rb -D /home/edner/website -t php`
 
-*Filetype: py,c,php..*
+    *Filetype: py,c,php..*
 
 + Scan with days interval
 
-$ ruby reiker.rb -D /home/ender/webstie -t php -d 10
+    `$ ruby reiker.rb -D /home/ender/webstie -t php -d 10`
 
-*it means it will scan for the files modified 10 days ago*
+    *it means it will scan for the files modified 10 days ago*
  
