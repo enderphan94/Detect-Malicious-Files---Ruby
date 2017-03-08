@@ -42,7 +42,7 @@ if (i)
   end
 
   client[:backdoor].find.each do |_a|
-     count+ = 1
+     count += 1
   end
 
   puts "There are #{count} sample(s) is(are) available. You can use -s to show the data"
