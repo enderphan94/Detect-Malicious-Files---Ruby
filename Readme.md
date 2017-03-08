@@ -39,6 +39,7 @@ Usage: reiker [options]
 ##dbin.rb
 
 Usage: dbin [options]
+
     -i, --sample else                The unhashed sample
 
     -s, --show [use "-s show"]       Show the sample in database
