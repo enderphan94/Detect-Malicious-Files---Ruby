@@ -47,7 +47,7 @@ Usage: dbin [options]
 
 # Guide
 
-You need to install the needed software to implement the program. 
+You need to install the needed software to run the program. 
 
 ## Talk to database
 
