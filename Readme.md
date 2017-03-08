@@ -12,6 +12,10 @@ Hash Samples sources: https://virusshare.com/
 
 The Reiker project is created for Ruby course which will illustrate how strong ruby in Security. In this project it is developed to help people can find the malicious files in Linux evironment (Malware, Rootkit, Backdoor..).
 
+# Construction
+
+![Alt text](http://imgur.com/a/LX1zW)
+
 # Requirements
 
 - Mongodb version v.3.4.2
