@@ -14,7 +14,7 @@ The Reiker project is created for Ruby course which will illustrate how strong r
 
 # Construction
 
-![Alt text](http://imgur.com/a/LX1zW)
+![Alt text](http://i.imgur.com/ZDVVh8R.png)
 
 # Requirements
 
