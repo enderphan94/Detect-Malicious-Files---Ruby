@@ -85,3 +85,7 @@ Go to directory has been downloaded/cloned.
 
     *it means it will scan for the files modified 10 days ago*
  
+# Output
+
+
+![Alt text](http://i.imgur.com/yanrgB0.png)
