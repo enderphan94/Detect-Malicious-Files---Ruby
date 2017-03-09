@@ -2,7 +2,7 @@
 
 Coded By Ender Phan
 
-Written by Ruby
+Written in Ruby
 
 Operating System: Linux (Tested in Ubuntu 16.10)
 
