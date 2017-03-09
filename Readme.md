@@ -50,9 +50,11 @@ Usage: dbin [options]
 
 Go to directory has been downloaded/cloned. 
 
-## Install
+## Installation
 
-	`$ sudo ./install`
++ Run script install file
+
+    `$ ruby dbin.rb -s show`	
 
 ## Talk to database
 
