@@ -52,7 +52,7 @@ Go to directory has been downloaded/cloned.
 
 ## Install
 
-    `$ sudo ./install`
+	`$ sudo ./install`
 
 ## Talk to database
 
