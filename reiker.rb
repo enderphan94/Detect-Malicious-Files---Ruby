@@ -72,7 +72,6 @@ def open_file(file)
       sub = (today - file_time).to_i
       if sub < @d.to_i
         puts '%o' % perm.mode + "\t" + Etc.getpwuid(uid).name + "\t" + file.to_s + "\t" + condtime.to_s
-
         end
     else
       puts '%o' % perm.mode + "\t" + Etc.getpwuid(uid).name + "\t" + file.to_s + "\t" + contime.to_s
@@ -82,6 +81,7 @@ def open_file(file)
   client.close
   end
 
+puts "\n"
 if t
   Dir.glob(D + '*' + t) do |file|
     open_folder(file) if File.directory?(file)
