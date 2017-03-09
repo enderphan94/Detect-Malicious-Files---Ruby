@@ -2,7 +2,7 @@
 
 Coded By Ender Phan
 
-Written by Ruby
+Written in Ruby
 
 Operating System: Linux (Tested in Ubuntu 16.10)
 
@@ -11,6 +11,10 @@ Hash Samples sources: https://virusshare.com/
 # Introduction
 
 The Reiker project is created for Ruby course which will illustrate how strong ruby in Security. In this project it is developed to help people can find the malicious files in Linux evironment (Malware, Rootkit, Backdoor..).
+
+# Construction
+
+![Alt text](http://i.imgur.com/YaJmcyu.png)
 
 # Requirements
 
@@ -35,6 +39,7 @@ Usage: reiker [options]
 ##dbin.rb
 
 Usage: dbin [options]
+
     -i, --sample else                The unhashed sample
 
     -s, --show [use "-s show"]       Show the sample in database
@@ -43,38 +48,38 @@ Usage: dbin [options]
 
 # Guide
 
-You need to install the needed software to implement the program. 
+You need to install the needed software to run the program. 
 
 ## Talk to database
 
 + Start Mongod service 
 
-$ service mongod start
+    `$ service mongod start`
 
 + Checking for the samples in database are available
 
-$ ruby dbin.rb -s show
+    `$ ruby dbin.rb -s show`
 
 + Import samples to the database
 
-$ ruby dbin.rb -i </path/file>
+    `$ ruby dbin.rb -i </path/file>`
 
 
 ## Execute the scan
 
 + Scan with entire directory
 
-$ ruby reiker.rb -D /home/ender/website
+    `$ ruby reiker.rb -D /home/ender/website`
 
 + Scan with the specific file types
 
-$ ruby reiker.rb -D /home/edner/website -t php 
+    `$ ruby reiker.rb -D /home/edner/website -t php`
 
-*Filetype: py,c,php..*
+    *Filetype: py,c,php..*
 
 + Scan with days interval
 
-$ ruby reiker.rb -D /home/ender/webstie -t php -d 10
+    `$ ruby reiker.rb -D /home/ender/webstie -t php -d 10`
 
-*it means it will scan for the files modified 10 days ago*
+    *it means it will scan for the files modified 10 days ago*
  
