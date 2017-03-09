@@ -48,13 +48,13 @@ Usage: dbin [options]
 
 # Guide
 
-You need to install the needed software to run the program. 
+Go to directory has been downloaded/cloned. 
+
+## Install
+
+    `$ sudo ./install`
 
 ## Talk to database
-
-+ Start Mongod service 
-
-    `$ service mongod start`
 
 + Checking for the samples in database are available
 
