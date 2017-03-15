@@ -40,7 +40,9 @@ Usage: reiker [options]
 
 Usage: dbin [options]
 
-    -i, --sample else                The unhashed sample
+    -i, --sample hash                The unhashed sample
+
+    -a, --available hashed code      available hashed
 
     -s, --show [use "-s show"]       Show the sample in database
 
@@ -62,10 +64,13 @@ Go to directory has been downloaded/cloned.
 
     `$ ruby dbin.rb -s show`
 
-+ Import samples to the database
++ Import UNHASHED samples to the database
 
     `$ ruby dbin.rb -i </path/file>`
 
++ Import HASHED samples to the database
+
+    `$ ruby dbin.rb -i </path/file>`
 
 ## Execute the scan
 
