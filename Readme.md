@@ -24,7 +24,7 @@ The Reiker project is created for Ruby course which will illustrate how strong r
 
 # Usage
 
-##reiker.rb
+## reiker.rb
 
 Usage: reiker [options]
 
@@ -36,7 +36,7 @@ Usage: reiker [options]
 
     -h, --help                       Displays Help
 
-##dbin.rb
+## dbin.rb
 
 Usage: dbin [options]
 
