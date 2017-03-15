@@ -1,4 +1,4 @@
-#Reiker - Scanning Malware/Rootkit/Backdoor files in Linux
+# Reiker - Scanning Malware/Rootkit/Backdoor files in Linux
 
 Coded By Ender Phan
 
