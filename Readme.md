@@ -56,7 +56,13 @@ Go to directory has been downloaded/cloned.
 
 + Run script install file
 
-    `$ ruby dbin.rb -s show`	
+    `$ git clone https://github.com/enderphan94/Detect-Malicious-Files---Ruby`
+    
+    `$ cd Detect-Malicious-Files---Ruby`
+    
+    `$ chmod 777 install`
+    
+    `$ sudo ./intall`
 
 ## Talk to database
 
