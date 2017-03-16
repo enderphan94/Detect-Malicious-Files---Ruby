@@ -58,7 +58,7 @@ Go to directory has been downloaded/cloned.
 
     `$ git clone https://github.com/enderphan94/Detect-Malicious-Files---Ruby`
     
-    `$ cd Detect-Malicious-Files---Ruby`
+    `$ cd Detect-Malicious-Files---Ruby/`
     
     `$ chmod 777 install`
     
