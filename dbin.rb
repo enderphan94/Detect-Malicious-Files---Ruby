@@ -2,6 +2,8 @@ require 'optparse'
 require 'ostruct'
 require 'digest'
 require 'mongo'
+require 'net/http'
+require 'uri'
 
 Mongo::Logger.logger.level = ::Logger::FATAL
 
@@ -9,8 +11,9 @@ client = Mongo::Client.new(['127.0.0.1:27017'], database: 'hashSample')
 
 options = OpenStruct.new
 OptionParser.new do |opt|
-  opt.on('-i', '--sample hash', 'The unhashed sample') { |o| options.sample = o }
-  opt.on('-a', '--available hashed code', 'available hashed') { |o| options.avai = o }
+  opt.on('-i', '--unhashed sample', 'The unhashed sample') { |o| options.sample = o }
+  opt.on('-a', '--hashed code', 'available hashed') { |o| options.avai = o }
+  opt.on('--page', '--page number of virusshare', 'Input from virusshare') { |o| options.page = o }
   opt.on('-s', '--show [use "-s show"]', 'Show the sample in database') { |o| options.show = o }
   opt.on('-h', '--help', 'Displays Help') do
     puts opt
@@ -18,6 +21,7 @@ OptionParser.new do |opt|
   end
 end.parse!
 a = options.avai
+p = options.page
 i = options.sample
 s = options.show
 if i
@@ -49,14 +53,12 @@ if i
 end
 if s == 'show'
 
-  puts "The hashed samples in database\n"
-  puts '-----------------------------------------'
-
-  client[:backdoor].find.each do |a|
-    # puts "\n"
-    puts "|\t#{a['hash']}\t|"
-    puts '-----------------------------------------'
+  puts "\n"
+  count = 0
+  client[:backdoor].find.each do |_a|
+    count += 1
   end
+  puts "There are #{count} sample(s) is(are) available. \n"
 end
 
 if a
@@ -76,5 +78,33 @@ if a
       client[:backdoor].insert_one sam
     end
   end
+end
+
+if p
+
+  storage_data = []
+  client[:backdoor].find.each do |av|
+    storage_data.push(av['hash'])
+  end
+
+  def open(url)
+    Net::HTTP.get(URI.parse(url))
+  end
+
+  page_content = open('https://virusshare.com/hashes/VirusShare_0000' + p + '.md5')
+
+  storage_line = []
+  page_content.each_line do |line|
+    next unless line[0] != '#'
+    storage_line.push(line)
+    on = { hash: line }
+    if storage_data.include?(line)
+      break
+    else
+      puts 'Importing....., please wait. Do not turn your computer off!'
+      client[:backdoor].insert_one on
+    end
+  end
+  puts 'This page already imported' if storage_data.include?(storage_line[0])
 end
 client.close
