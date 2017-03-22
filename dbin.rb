@@ -13,7 +13,7 @@ options = OpenStruct.new
 OptionParser.new do |opt|
   opt.on('-i', '--unhashed sample', 'The unhashed sample') { |o| options.sample = o }
   opt.on('-a', '--hashed code', 'available hashed') { |o| options.avai = o }
-  opt.on('--page', '--page number of virusshare', 'Input from virusshare') { |o| options.page = o }
+  opt.on('-p', '--page number of virusshare', 'Input from virusshare') { |o| options.page = o }
   opt.on('-s', '--show [use "-s show"]', 'Show the sample in database') { |o| options.show = o }
   opt.on('-h', '--help', 'Displays Help') do
     puts opt
