@@ -41,6 +41,8 @@ Usage: reiker [options]
 Usage: dbin [options]
 
     -i, --sample hash                The unhashed sample
+    
+    -p, --page number of virusshare  Input from virusshare
 
     -a, --available hashed code      available hashed
 
