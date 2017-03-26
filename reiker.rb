@@ -17,7 +17,7 @@ OptionParser.new do |opt|
 end.parse!
 
 D = options.dir
-t = options.type
+@t = options.type
 @d = options.time
 
 Mongo::Logger.logger.level = ::Logger::FATAL
@@ -28,8 +28,8 @@ Mongo::Logger.logger.level = ::Logger::FATAL
 
 @i = 0
 def open_folder(file)
-  if t
-    Dir.glob("#{file}/*" + t) do |subfiles|
+  if @t
+    Dir.glob("#{file}/*" + @t) do |subfiles|
       if File.directory?(subfiles)
         open_folder(subfiles)
 
@@ -82,8 +82,8 @@ def open_file(file)
   end
 
 puts "\n"
-if t
-  Dir.glob(D + '*' + t) do |file|
+if @t
+  Dir.glob(D + '*' + @t) do |file|
     open_folder(file) if File.directory?(file)
     open_file(file) if File.file?(file)
   end
